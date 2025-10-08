@@ -25,7 +25,7 @@ The system pipeline is organized into several main stages:
 6. **Output Visualization** – The result is overlaid on the video, and active speakers are highlighted in real time.
 
 ## Dataset
-The project uses a subset of the AVA-ActiveSpeaker Dataset, which provides synchronized video frames and speaker annotations.
+The project uses a subset of the AVA-ActiveSpeaker dataset, which provides synchronized video frames and speaker annotations.
 Link to the dataset: https://research.google.com/ava/download.html#ava_active_speaker_download
 
 ## Key Features
