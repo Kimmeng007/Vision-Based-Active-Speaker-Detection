@@ -16,15 +16,13 @@ The proposed model leverages:
 ---
 
 ## System Architecture
-
-```mermaid
-flowchart LR
-    A[Input Video] --> B[YOLOv8 Face Detection]
-    B --> C[Feature Extraction (ResNet50 / EfficientNetB0)]
-    C --> D[LSTM for Temporal Modeling]
-    D --> E[Speaker/Non-Speaker Classification]
-    E --> F[Output: Active Speaker Detected]
-```
+The system pipeline is organized into several main stages:
+1. **Input Video Processing** – A video stream is captured and preprocessed using OpenCV.  
+2. **Face Detection** – YOLOv8 detects faces in each frame with bounding boxes.  
+3. **Feature Extraction** – Each detected face is passed through a CNN backbone (ResNet50 or EfficientNetB0) to obtain spatial embeddings.  
+4. **Temporal Modeling** – The sequence of embeddings over time is fed into an LSTM network to capture motion and temporal patterns.  
+5. **Classification** – The LSTM output is classified as either **“Speaking”** or **“Not Speaking”**.  
+6. **Output Visualization** – The result is overlaid on the video, and active speakers are highlighted in real time.
 
 ## Dataset
 The project uses a subset of data from the AVA-ActiveSpeaker Dataset, which provides synchronized video frames and speaker annotations.
